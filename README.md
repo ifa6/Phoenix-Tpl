@@ -102,6 +102,12 @@ right side of the navigation. One of them is the logout button.
 I already created a default user with username `root` and password `toor`.
 Please create a new user and remove this one *before* you deploy the system.
 
+### Disable login
+If think the login provided by the homepage itself is a possible security
+issue, go ahead and delete the `data/passwd.json` file. This disables the login
+mechanism completely. (`http://example.org/user/login` will still be
+accessible)
+
 ### License
 I provide assets like bootstrap and flowplayer as they are to ensure better out
 of the box experience. This way you do not have to install them manually.

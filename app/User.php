@@ -23,8 +23,14 @@ class User {
     }
 
     public function login($user, $pass) {
-        // get users
+        // passwd path
         $users = __DIR__.'/../data/passwd.json';
+
+        // check passwd
+        if (!is_readable($users))
+            return false;
+
+        // get passwd
         $users = json_decode(file_get_contents($users), true);
 
         // check username
