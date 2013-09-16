@@ -28,18 +28,6 @@ body {
     padding: 2px 5px;
 }
 
-#main > footer .author {
-    text-align: left;
-}
-
-#main > footer .year {
-    text-align: center;
-}
-
-#main > footer .legal {
-    text-align: right;
-}
-
 /* -------------------------------------------------- LOGO */
 #main > .logo img {
     display: block;
