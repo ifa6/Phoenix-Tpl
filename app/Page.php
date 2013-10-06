@@ -8,7 +8,7 @@
  */
 class Page {
     public static function index($app, $page) {
-        $path = __DIR__.'/../data/page/'.$page;
+        $path = __DIR__.'/../data/pages/'.$page;
         $path = rtrim($path, '/');
 
         if (!file_exists($path))

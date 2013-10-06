@@ -2,4 +2,4 @@
 
 This example page is written in Markdown
 
-![Logo](page/gfx/logo.png)
+![Logo](pages/gfx/logo.png)

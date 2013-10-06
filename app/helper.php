@@ -4,7 +4,7 @@ use dflydev\markdown\MarkdownParser;
 
 /**
  * returns html to build a breadcrumb based upon path.
- * path should look like this: page/subdir/gfx
+ * path should look like this: pages/subdir/gfx
  */
 function breadcrumb($path) {
     $parts = explode('/', $path);

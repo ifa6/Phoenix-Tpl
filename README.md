@@ -56,9 +56,6 @@ code, I tried keeping it clean and simple.
 
 You can find the implementation code inside the `app` directory.
 
-### How to customize the navigation
-The navigation bar on top of the page is pulled from the file `data/nav.html`.
-
 ### How to customize the page
 The two main files you want to look at are `tpl/layout.html.twig` and
 `web/assets/default.css`. If you want to change the look of a specific

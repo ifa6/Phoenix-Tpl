@@ -6,7 +6,7 @@
  */
 class File {
     public static function index($app, $file) {
-        $path = __DIR__.'/../data/file/'.$file;
+        $path = __DIR__.'/../data/files/'.$file;
         $path = rtrim($path, '/');
 
         if (is_dir($path)) {

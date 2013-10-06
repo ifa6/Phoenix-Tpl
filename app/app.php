@@ -38,12 +38,12 @@ if ($app['user']->is_loggedin()) {
 }
 
 // -------------------------------------------------- ROUTES
-$app->get('/page/{page}', function($page) use ($app) {
+$app->get('/pages/{page}', function($page) use ($app) {
     require_once __DIR__.'/Page.php';
     return Page::index($app, $page);
 })->assert('page', '.*');
 
-$app->get('/file/{file}', function($file) use ($app) {
+$app->get('/files/{file}', function($file) use ($app) {
     require_once __DIR__.'/File.php';
     return File::index($app, $file);
 })->assert('file', '.*');
