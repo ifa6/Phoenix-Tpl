@@ -8,7 +8,7 @@
 This projects aims to be a starting template for simple web pages. It's built
 on top of the silex micro framework. Even though a file manager with editor is
 provided, the recommended way of alerting content would be handling the files
-directly or via ftp. This encourages you to use your favorite editor.
+directly or via sftp. This encourages you to use your favorite editor.
 
 ### Used Components
  - [Bootstrap](http://twitter.github.com/bootstrap/)
@@ -26,7 +26,8 @@ directly or via ftp. This encourages you to use your favorite editor.
  - gallery with automatic thumbnail creation
  - file section
  - user authentication
- - handcrafted file manager with WYSIWYG editor
+ - handcrafted file manager
+ - WYSIWYG editor
 
 ### Installation
 [Composer](http://getcomposer.org/) is used for the installation so process.
@@ -46,8 +47,13 @@ Point your web server to the `web` directory.
 Simply run
 
     $ bash utils/web_to_root.sh
+    $ git add --all
+    $ git commit -m 'move web to root'
 
 and point your web server to the root directory of this project.
+
+I already created a default user with username `root` and password `toor`.
+Please create a new user and remove this one *before* you deploy the system.
 
 ### How to add content
 All content should be kept inside the `data` folder. Some example content has
@@ -90,15 +96,11 @@ I already created a default user with username `root` and password `toor`.
 Please create a new user and remove this one *before* you deploy the system.
 
 ### Disable login
-If think the login provided by the homepage itself is a possible security
-issue, go ahead and delete the `data/passwd.json` file. This disables the login
-mechanism completely. (`http://example.org/user/login` will still be
-accessible)
+You can disable the login completly by deleting `data/passwd.json`.  This
+disables the login mechanism completely. (`http://example.org/user/login` will
+still be accessible)
 
 ### License
-I provide assets like bootstrap and flowplayer as they are to ensure better out
-of the box experience. This way you do not have to install them manually.
-
     Copyright (c) 2013 Alex W4RH4WK Hirsch
 
     This program is free software: you can redistribute it and/or modify
