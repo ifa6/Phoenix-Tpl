@@ -19,9 +19,11 @@
                 </div>
             {% endfor %}
         </div>
-        <script type="text/javascript">
-            // open first collapse
-            $('div#blog div#list-accordion > :first-child > :first-child').next().addClass('in');
+        <script>
+            $(function() {
+                // open first collapse
+                $('div#blog div#list-accordion > :first-child > :first-child').next().addClass('in');
+            });
         </script>
     </div>
     <div class="col-sm-9" id="entry">

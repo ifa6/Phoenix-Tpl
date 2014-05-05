@@ -18,16 +18,15 @@
 
         <!-- css -->
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" media="screen"/>
-        <link rel="stylesheet" href="assets/flowplayer/skin/minimalist.css" />
         <link rel="stylesheet" href="assets/font-awesome/font-awesome.min.css" />
-        <link rel="stylesheet" href="assets/lightbox/css/lightbox.css" />
         <link rel="stylesheet" href="assets/default.css" />
 
-        <!-- js -->
-        <script src="assets/jquery.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/lightbox/js/lightbox-2.6.min.js"></script>
-        <script src="assets/flowplayer/flowplayer.min.js"></script>
+        <!-- jquery ready -->
+        <script>(function(w,d,u){w.readyQ=[];w.bindReadyQ=[];function
+        p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var
+        a={ready:p,bind:p};w.$=w.jQuery=function(f){if(f===d||f===u){return
+        a}else{p(f)}}})(window,document)</script>
+
     </head>
     <body>
         <div id="main" class="container">
@@ -69,7 +68,9 @@
                         <a href="user/logout" class="btn btn-warning" rel="tooltip" title="Logout"><i class="icon-signout"></i></a>
                     </div>
                     <script>
-                        $('div.tools a').tooltip({'placement':'bottom'});
+                        $(function() {
+                            $('div.tools a').tooltip({'placement':'bottom'});
+                        });
                     </script>
                     {% endif %}
                 </div>
@@ -97,7 +98,9 @@
                 <a href="http://ckeditor.com" rel="tooltip" title="CKEditor"><img src="assets/gfx/ckeditor.ico" alt="CKEditor" /></a>
             </section>
             <script>
-                $("div#main > section.links a").tooltip();
+                $(function() {
+                    $("div#main > section.links a").tooltip();
+                });
             </script>
 
             <!-- logo -->
@@ -105,5 +108,20 @@
                 <img src="assets/gfx/logo.png" />
             </section>
         </div>
+
+        <!-- js -->
+        <script src="assets/jquery.js"></script>
+        <script>(function($,d){$.each(readyQ,function(i,f){$(f)});$.each(bindReadyQ,function(i,f){$(d).bind("ready",f)})})(jQuery,document)</script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script>
+            function loadcss(path) {
+                $('head').append(
+                    $('<link />').attr('rel', 'stylesheet').attr('href', path)
+                );
+            }
+            function loadjs(path) {
+                $('head').append($('<script />').attr('src', path));
+            }
+        </script>
     </body>
 </html>

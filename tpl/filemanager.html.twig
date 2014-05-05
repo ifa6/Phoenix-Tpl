@@ -128,15 +128,16 @@
     </div>
 </div>
 
-<!-- file manager scripts -->
-<script type="text/javascript" src="assets/filemanager.js"></script>
-<script type="text/javascript">
-    var PATH = '{{ path|raw }}';
-    browse(PATH);
-</script>
+<script>
+    $(function() {
+        loadjs('assets/filemanager.js');
 
-<!-- editor scripts -->
-<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
-<script type="text/javascript" src="assets/ckeditor/adapters/jquery.js"></script>
-<script type="text/javascript" src="assets/editor.js"></script>
+        var PATH = '{{ path|raw }}';
+        browse(PATH);
+
+        loadjs('assets/ckeditor/ckeditor.js');
+        loadjs('assets/ckeditor/adapters/jquery.js');
+        loadjs('assets/editor.js');
+    });
+</script>
 {% endblock %}
