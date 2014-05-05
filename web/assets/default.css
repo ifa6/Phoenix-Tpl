@@ -5,6 +5,11 @@ body {
     background: #fff url(gfx/bg.png);
 }
 
+#main {
+    margin-top: 20px;
+    max-width: 970px;
+}
+
 #main > nav .navbar-brand {
     padding: 9px 10px 0px;
 }
@@ -16,6 +21,7 @@ body {
 #main > .content {
     background-color: #fdfdfd;
     border: solid thin #d4d4d4;
+    margin-bottom: 20px;
     padding: 3px 10px;
 }
 
@@ -23,7 +29,6 @@ body {
     background-color: #fdfdfd;
     border: solid thin #d4d4d4;
     font-size: 11px;
-    margin-top: 10px;
     overflow: hidden;
     padding: 2px 5px;
 }
