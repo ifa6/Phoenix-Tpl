@@ -38,25 +38,17 @@ if ($app['user']->is_loggedin()) {
 }
 
 // -------------------------------------------------- ROUTES
-$app->get('/pages/{page}', function($page) use ($app) {
-    require_once __DIR__.'/Page.php';
-    return Page::index($app, $page);
-})->assert('page', '.*');
+require_once __DIR__.'/Page.php';
+$app->mount('/pages', Page::controller($app));
 
-$app->get('/files/{file}', function($file) use ($app) {
-    require_once __DIR__.'/File.php';
-    return File::index($app, $file);
-})->assert('file', '.*');
+require_once __DIR__.'/File.php';
+$app->mount('/files', File::controller($app));
 
-$app->get('/blog/{blog}', function($blog) use ($app) {
-    require_once __DIR__.'/Blog.php';
-    return Blog::index($app, $blog);
-})->assert('blog', '.*');
+require_once __DIR__.'/Blog.php';
+$app->mount('/blog', Blog::controller($app));
 
-$app->get('/gallery/{path}', function($path) use ($app) {
-    require_once __DIR__.'/Gallery.php';
-    return Gallery::index($app, $path);
-})->assert('path', '.*');
+require_once __DIR__.'/Gallery.php';
+$app->mount('/gallery', Gallery::controller($app));
 
 // -------------------------------------------------- DEFAULT ROUTE
 $app->match('/', function() use ($app) {

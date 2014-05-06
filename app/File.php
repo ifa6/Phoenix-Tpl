@@ -35,4 +35,14 @@ class File {
             return $app->sendFile($path);
         }
     }
+
+    public static function controller($app) {
+        $c = $app['controllers_factory'];
+
+        $c->get('/{file}', function ($file) use ($app) {
+            return self::index($app, $file);
+        })->assert('file', '.*');
+
+        return $c;
+    }
 }

@@ -60,4 +60,14 @@ class Page {
             )
         );
     }
+
+    public static function controller($app) {
+        $c = $app['controllers_factory'];
+
+        $c->get('/{page}', function ($page) use ($app) {
+            return self::index($app, $page);
+        })->assert('page', '.*');
+
+        return $c;
+    }
 }

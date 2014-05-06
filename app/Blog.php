@@ -60,4 +60,14 @@ class Blog {
 
         return $list;
     }
+
+    public static function controller($app) {
+        $c = $app['controllers_factory'];
+
+        $c->get('/{blog}', function ($blog) use ($app) {
+            return self::index($app, $blog);
+        })->assert('blog', '.*');
+
+        return $c;
+    }
 }

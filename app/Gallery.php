@@ -55,4 +55,14 @@ class Gallery {
             )
         );
     }
+
+    public static function controller($app) {
+        $c = $app['controllers_factory'];
+
+        $c->get('/{path}', function ($path) use ($app) {
+            return self::index($app, $path);
+        })->assert('path', '.*');
+
+        return $c;
+    }
 }
